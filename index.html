@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Farrel Jade B. Diaz | IT Student Portfolio</title>
+<meta name="description" content="Portfolio of Bianca Isabel M. Bantasan, an IT student at Cebu Eastern College.">
+<script>
+(function(){var t;try{t=localStorage.getItem('theme2')}catch(e){}
+if(!t){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+document.documentElement.setAttribute('data-theme',t);})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root[data-theme="light"]{
+  --bg:#f3ecfd; --surface:#ffffff; --soft:#e6daf9; --text:#2b1f45; --muted:#5f5180;
+  --line:#d8c8f2; --lilac:#b9a1e8; --accent:#6b4bb8; --butter:#fbe38e; --on-butter:#2b1f45;
+  --shadow:rgba(107,75,184,.18);
+}
+:root[data-theme="dark"]{
+  --bg:#1b1430; --surface:#271e42; --soft:#33295a; --text:#f6f1ff; --muted:#bdb1dc;
+  --line:#3f3366; --lilac:#c4b0f0; --accent:#fbe38e; --butter:#fbe38e; --on-butter:#2b1f45;
+  --shadow:rgba(0,0,0,.35);
+}
+:root{--head:"Fraunces",Georgia,serif;--body:"Nunito",system-ui,Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--bg);color:var(--text);font:1.06rem/1.7 var(--body);transition:background .3s,color .3s}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+
+header{position:sticky;top:14px;z-index:10;padding:0 14px}
+.bar{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 10px 8px 24px;box-shadow:0 10px 30px var(--shadow);position:relative}
+.brand{font:800 1.05rem var(--head);color:var(--text);text-decoration:none}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+nav a{display:block;color:var(--muted);text-decoration:none;font-weight:600;padding:8px 16px;border-radius:999px}
+nav a:hover{background:var(--soft);color:var(--text)}
+nav a.active{background:var(--butter);color:var(--on-butter)}
+.tools{display:flex;gap:8px}
+.pill-btn{background:var(--soft);border:0;color:var(--text);border-radius:999px;height:40px;padding:0 16px;font:700 .92rem var(--body);cursor:pointer}
+.pill-btn:hover{background:var(--lilac);color:#2b1f45}
+#menu-btn{display:none}
+
+.hero{text-align:center;padding:64px 0 72px}
+.avatar{position:relative;width:230px;height:230px;margin:0 auto 32px}
+.avatar::before{content:"";position:absolute;inset:-14px -14px 14px 14px;background:var(--butter);border-radius:50%}
+.avatar-frame{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:var(--lilac);border:6px solid var(--surface);box-shadow:0 18px 40px var(--shadow)}
+.avatar-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.avatar-frame .initial{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font:800 5.5rem var(--head);color:#2b1f45}
+.hero h1{font:800 clamp(2.2rem,6vw,3.8rem)/1.1 var(--head);margin:0 0 12px;color:var(--accent)}
+.role{display:inline-block;background:var(--butter);color:var(--on-butter);font-weight:700;padding:6px 18px;border-radius:999px;margin-bottom:22px}
+.hero p{max-width:36em;margin:0 auto 30px;color:var(--muted);font-size:1.15rem}
+.btn{display:inline-block;background:var(--butter);color:var(--on-butter);text-decoration:none;font-weight:700;padding:13px 28px;border-radius:999px;margin:0 6px 10px;box-shadow:0 8px 20px var(--shadow);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:var(--surface);color:var(--text);border:2px solid var(--lilac);box-shadow:none}
+
+section{padding:64px 0}
+.title{text-align:center;margin-bottom:36px}
+h2{font:800 clamp(1.8rem,4vw,2.4rem) var(--head);margin:0 0 8px;color:var(--text)}
+h2::after{content:"";display:block;width:64px;height:6px;border-radius:6px;background:var(--butter);margin:12px auto 0}
+.lead{color:var(--muted);margin:0}
+h3{font:800 1.25rem var(--head);margin:0 0 8px}
+
+.about-text{max-width:720px;margin:0 auto 36px;text-align:center}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin:0}
+.fact{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--lilac);border-radius:18px;padding:18px 20px}
+.fact:nth-child(even){border-top-color:var(--butter)}
+.fact dt{color:var(--muted);font-size:.9rem}
+.fact dd{margin:2px 0 0;font-weight:700}
+
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.skill-card{background:var(--surface);border:1px solid var(--line);border-radius:28px 28px 28px 8px;padding:28px;box-shadow:0 8px 24px var(--shadow)}
+.chips{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.chips li{background:var(--soft);border-radius:999px;padding:6px 16px;font-weight:700;font-size:.94rem}
+.chips li:nth-child(odd){background:var(--butter);color:var(--on-butter)}
+.desc{margin:18px 0 0;color:var(--muted);font-size:.98rem}
+
+.project{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:32px;padding:20px;margin-bottom:24px;box-shadow:0 8px 24px var(--shadow)}
+.project:nth-of-type(even){grid-template-columns:1fr 1.1fr}
+.project:nth-of-type(even) .shot{order:2}
+.shot{aspect-ratio:16/10;background:var(--soft);border-radius:22px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;color:var(--muted);font-size:.92rem}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.project .body{padding:8px 12px}
+.project p{margin:0 0 10px;color:var(--muted)}
+.project strong{color:var(--text)}
+.tag{background:var(--butter);color:var(--on-butter);padding:1px 8px;border-radius:6px;font-size:.92rem}
+
+.contact-panel{background:var(--butter);color:var(--on-butter);border-radius:36px;padding:44px 36px}
+.contact-panel h2{color:var(--on-butter);text-align:center}
+.contact-panel h2::after{background:var(--lilac)}
+.contact-panel .lead{color:#4a3c70;text-align:center;margin-bottom:28px}
+.contact-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.contact-list li{background:rgba(255,255,255,.65);border-radius:20px;padding:16px 20px;word-break:break-word}
+.contact-list .label{display:block;font-weight:800;font-size:.92rem;color:#5a3fa3}
+.contact-list a{color:#2b1f45;font-weight:700}
+.contact-list a:hover{color:#5a3fa3}
+.contact-list .tag{background:#fff}
+
+footer{padding:28px 0 32px;color:var(--muted);font-size:.95rem}
+.foot{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
+
+@media (max-width:780px){
+  #menu-btn{display:inline-block}
+  header{top:8px}
+  .bar{border-radius:28px;padding-left:18px}
+  .brand{font-size:.92rem}
+  nav{display:none}
+  nav.open{display:block;position:absolute;left:0;right:0;top:calc(100% + 8px);background:var(--surface);border:1px solid var(--line);border-radius:24px;box-shadow:0 10px 30px var(--shadow)}
+  nav ul{flex-direction:column;padding:10px}
+  .hero{padding:44px 0 56px}
+  .avatar{width:190px;height:190px}
+  .skill-grid,.contact-list{grid-template-columns:1fr}
+  .project,.project:nth-of-type(even){grid-template-columns:1fr;gap:16px}
+  .project:nth-of-type(even) .shot{order:0}
+  .contact-panel{padding:32px 20px}
+  section{padding:48px 0}
+  .foot{flex-direction:column;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="brand" href="#home">Farrel Jade B. Diaz</a>
+    <nav id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="tools">
+      <button class="pill-btn" id="theme-btn" aria-label="Switch between light and dark mode">Dark mode</button>
+      <button class="pill-btn" id="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="wrap">
+    <div class="avatar">
+      <div class="avatar-frame">
+        <img src="images/profile.jpg" alt="Photo of Farrel Jade B. Diaz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="initial" aria-hidden="true">F</div>
+      </div>
+    </div>
+    <h1>Farrel Jade B. Diaz</h1>
+    <span class="role">IT Student at Cebu Eastern College</span>
+    <p>Aspiring technologist blending web development, system administration, and information security fundamentals. I focus on designing and building practical, secure, and user-friendly web tools that solve real-world challenges and empower local communities. Driven by a continuous passion for learning, I aim to create reliable digital experiences that make technology approachable and impactful for everyone.</p>
+    <a class="btn" href="#projects">View my projects</a>
+    <a class="btn alt" href="#contact">Get in Touch</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="title"><h2>About me</h2></div>
+    <div class="about-text">
+      <p>For me, writing code is only half the battle the real challenge is building software that users can trust.</p>
+      <p>​I am Diaz, Farrel Jade, an Information Technology student at Cebu Eastern College, Incorporated with a strong foundation in system administration, client-server architecture, and information assurance. With a keen eye for graphic design and user experience, I blend creative visual storytelling with technical development to build functional web pages, polished game prototypes, and secure applications.</p>
+      <p>​Moving forward, I am eager to deepen my expertise in secure web development, graphic design, and ethical hacking fundamentals. Whether I'm designing engaging UI layouts, writing clean frontend code, or analyzing backend security, my goal is always to create digital experiences that are as beautiful and user-friendly as they are secure.</p>
+    </div>
+    <dl class="facts">
+      <div class="fact"><dt>School</dt><dd>Cebu Eastern College, Incorporated</dd></div>
+      <div class="fact"><dt>Location</dt><dd>40 Leon Kilat Street (at the intersection of Dimasalang St. and Leon Kilat St.), Cebu City, Philippines</dd></div>
+      <div class="fact"><dt>Studying</dt><dd>Bachelor of Science in Information Technology - 4th Year</dd></div>
+      <div class="fact"><dt>Interested in</dt><dd>Secure Digital Experiences, ​Interactive & Visual Tech, and ​Creative System Building</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="title"><h2>Skills</h2><p class="lead">A transparent overview of the tools and technologies I'm actively mastering:</p></div>
+    <div class="skill-grid">
+      <div class="skill-card"><h3>Frontend Development</h3>
+        <ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
+        <p class="desc">Building structure, style, and interactivity for the web.</p></div>
+      <div class="skill-card"><h3>Backend and Database</h3>
+        <ul class="chips"><li>PHP</li><li>Node.js</li><li>MySQL</li></ul>
+        <p class="desc">Learning core programming concepts and problem solving.</p></div>
+      <div class="skill-card"><h3>Frameworks</h3>
+        <ul class="chips"><li>React</li><li>Tailwind CSS</li><li>Node.js</li></ul>
+        <p class="desc">Designing and querying relational data.</p></div>
+      <div class="skill-card"><h3>Development Tools</h3>
+        <ul class="chips"><li>Visual Studio Code</li><li>Git</li><li>GitHub</li><li>Figma</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="title"><h2>Projects</h2><p class="lead">The projects I've worked on:</p></div>
+
+    <article class="project">
+      <img src="images/patintero.png" alt="Patintero dashboard screenshot">
+      <div class="body">
+        <h3>Patintero</h3>
+        <p>A project named Patintero is a pixel-art web game that brings the Filipino street classic. Players dodge the taggers and race to the glowing line, then compete for a place on the leaderboard.”</p>
+        <p><strong>My part:</strong> <span class="tag">QA Tester</span></p>
+        <p><span class="tag">Click her for the Online Link Game:<a href="https://marielle-https.github.io/PatinteroV2/">Accomplished/Done</a></span></p>
+      </div>
+    </article>
+
+    <article class="project">
+      <img src="images/brainrot escape.png" alt="Brainrot Escape dashboard screenshot">
+      <div class="body">
+        <h3>Brainrot Escape</h3>
+        <p>A game development named Brainrot Escape. A survivor trapped in a dangerous Backrooms environment must explore, gather supplies, solve puzzles, manage survival resources, avoid unpredictable Brainrot entities, and find the correct escape route through three increasingly difficult levels.</p>
+        <p><strong>My part:</strong> <span class="tag">UI/UX & Graphic Designer</span></p>
+        <p><span class="tag">Click her for the Online Link Game:<a href="#"> Still Pending</a></span></p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-panel">
+      <h2>Let's get in touch</h2>
+      <p class="lead">Want to work together or ask about my projects? Reach me through any of these.</p>
+      <ul class="contact-list">
+        <li><span class="label">Facebook</span><a href="https://www.facebook.com/share/1A2tiwn6zG/" target="_blank" rel="noopener">Farrel Jade B. Diaz</a></li>
+        <li><span class="label">Email</span><a href="mailto:farjhayde2004booc@gmail.com">farjhayde2004booc@gmail.com</a></li>
+        <li><span class="label">GitHub</span><a href="https://github.com/jhayde2004" target="_blank" rel="noopener"><span class="tag">DIAZ,FARREL JADE</span></a></li>
+        <li><span class="label">Contact number</span><a href="tel:09239400456">0923 940 0456</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot"><span>Designed and developed by Farrel Jade B. Diaz</span><span>Cebu City, Philippines &middot; &copy; 2026 All rights reserved.</span></div>
+</footer>
+
+<script>
+var root=document.documentElement,tb=document.getElementById('theme-btn');
+function label(){tb.textContent=root.getAttribute('data-theme')==='dark'?'Light mode':'Dark mode'}
+label();
+tb.addEventListener('click',function(){
+  var n=root.getAttribute('data-theme')==='dark'?'light':'dark';
+  root.setAttribute('data-theme',n);label();
+  try{localStorage.setItem('theme2',n)}catch(e){}
+});
+var mb=document.getElementById('menu-btn'),nav=document.getElementById('site-nav');
+mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+var links=[].slice.call(nav.querySelectorAll('a'));
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id)})}
+  })},{rootMargin:'-45% 0px -50% 0px'});
+  links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s)io.observe(s)});
+}
+</script>
+</body>
+</html>
